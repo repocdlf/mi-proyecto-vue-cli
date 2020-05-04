@@ -1,39 +1,47 @@
 <template>
-  <div>
-    <div id="app">
-
+  <div id="app" class="container">
+    <div class="jumbotron mt-3">
+      <h1>Componente Principal (App)</h1>
+      <hr />
+      <Navbar />
+      <Binding />
+      <Estructura />
+      <Atributos />
+      <h1>Tres instancias del componente Contador</h1>
+      <hr />
+      <Contador init="123" boton="danger" />
+      <Contador init="456" boton="warning" />
+      <Contador init="789" boton="success" />
+      <Contador2 valor-inicial="222" estilo="primary" color-de-fondo="dark-red" titulo="CONTADOR 2" />
     </div>
-    <Navbar />
-    <Binding/>
-    <Estructura/>
-    <Atributos/>
-    <Contador/>
-    <HelloWorld msg="Bienvenidos a Vue.js CLI" />
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue"
-import HelloWorld from "./components/HelloWorld.vue";
+import Navbar from "./components/Navbar.vue";
 import Binding from "./components/Binding.vue";
 import Estructura from "./components/Estructura.vue";
 import Atributos from "./components/Atributos.vue";
 import Contador from "./components/Contador/index.vue";
+import Contador2 from "./components/Contador2.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
     Navbar,
     Binding,
     Estructura,
     Atributos,
-    Contador
+    Contador,
+    Contador2
   }
 };
 </script>
 
 <style>
 #app {
+}
+h1 {
+  color: blue;
 }
 </style>
