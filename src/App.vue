@@ -12,7 +12,14 @@
       <Contador init="123" boton="danger" />
       <Contador init="456" boton="warning" />
       <Contador init="789" boton="success" />
-      <Contador2 valor-inicial="222" estilo="primary" color-de-fondo="dark-red" titulo="CONTADOR 2" />
+      <hr/>
+
+      <div class="button btn btn-danger my-3" @click="mostrar=!mostrar">
+        {{mostrar?'Ocultar':'Mostrar'}}
+      </div>
+      <div v-if="mostrar">
+        <Contador2 valor-inicial="222" estilo="primary" color-de-fondo="dark-red" titulo="CONTADOR 2" />
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +41,11 @@ export default {
     Atributos,
     Contador,
     Contador2
+  },
+  data(){
+    return {
+      mostrar: true
+    }
   }
 };
 </script>
